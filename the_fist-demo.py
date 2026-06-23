@@ -4,6 +4,7 @@ https://www.tavily.com/在官网注册一个api
 写一个提示词模板
 '''
 from dotenv import load_dotenv
+from matplotlib.style.core import available
 from tavily import TavilyClient
 import  requests
 import  os
@@ -85,8 +86,20 @@ def  search_attraction(city: str,weather: str) ->str :
     # pprint(response)
     print(response["answer"])
 
+"""
+工具在这里定义了两个，把所有工具放入字典，方便后续调用
+"""
 
+available_tools={
+    "get_weather":get_weather,
+    "search_attraction":search_attraction
+}
 
-city="杭州"
-weather=get_weather(city)
-search_attraction(city,weather)
+"""
+使用api调用大语言模型
+"""
+#
+# #传入参数调试
+# city="杭州"
+# weather=get_weather(city)
+# search_attraction(city,weather)
