@@ -1,2 +1,3 @@
 # agent-study
-记录本人技术学习过程
+it's a process of ai agent study
+first is agent-demo name as "travel assistant"
